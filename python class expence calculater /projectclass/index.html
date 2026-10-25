@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="dashboard">
+        <div class="left-panel">
+            <div class="profile-section">
+                <h2>Hello, <span id="userName">User</span></h2>
+                <p>Here is your financial breakdown.</p>
+            </div>
+
+            <div class="stats">
+                <div class="card">
+                    <div class="card-title">Total Income</div>
+                    <div class="card-value" id="incomeDisplay">$0</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Total Expenses</div>
+                    <div class="card-value red" id="expenseDisplay">$0</div>
+                </div>
+                <div class="card">
+                    <div class="card-title">Net Savings</div>
+                    <div class="card-value green" id="savingsDisplay">$0</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div class="status-badge" id="statusBadge">Checking...</div>
+            <div class="chart-container">
+                <canvas id="budgetChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="budget_data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+/* style.css */
+:root {
+    --primary-color: #4f46e5; /* Easy to change theme color here */
+    --bg-color: #f3f4f6;
+    --card-bg: #ffffff;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--bg-color);
+    padding: 20px;
+}
+
+.container { max-width: 1000px; margin: 0 auto; }
+
+/* Grid Layout: puts the form and chart side-by-side */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+}
+
+/* Chart Bars */
+.bar-wrapper { margin-bottom: 10px; }
+.bar-track { background: #eee; height: 10px; border-radius: 5px; }
+.bar-fill { height: 100%; border-radius: 5px; }

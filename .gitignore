@@ -1,0 +1,14 @@
+.DS_Store
+tempCodeRunnerFile.*
+__pycache__/
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+node_modules/
+dist/
+build/
+target/
+
+.venv/
