@@ -1,0 +1,88 @@
+:root {
+    --glass: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --text: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Background Blobs Animation */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(80px);
+}
+body::before {
+    width: 400px; height: 400px;
+    background: #ff9a9e; top: -100px; left: -100px;
+    animation: float 6s ease-in-out infinite;
+}
+body::after {
+    width: 300px; height: 300px;
+    background: #a18cd1; bottom: -50px; right: -50px;
+    animation: float 6s ease-in-out infinite reverse;
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(20px); }
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 20px;
+    width: 900px;
+    height: 500px;
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    color: var(--text);
+}
+
+.card {
+    background: rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    transition: transform 0.2s;
+}
+.card:hover { transform: scale(1.02); background: rgba(0,0,0,0.3); }
+
+.card-title { font-size: 0.8rem; text-transform: uppercase; opacity: 0.7; }
+.card-value { font-size: 1.5rem; font-weight: bold; }
+.green { color: #4ade80; }
+.red { color: #f87171; }
+
+.right-panel {
+    background: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-badge {
+    position: absolute;
+    top: 20px; right: 20px;
+    background: white; color: #333;
+    padding: 5px 15px; border-radius: 20px;
+    font-weight: bold; font-size: 0.8rem;
+}
+
+.chart-container { width: 100%; height: 100%; }
